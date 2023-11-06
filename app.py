@@ -9,8 +9,8 @@ import io
 st.set_page_config(layout='wide') #Choose wide mode as the default setting
 
 #Add a logo (optional) in the sidebar
-logo = Image.open(r'...\Insights_Bees_logo.png')
-st.sidebar.image(logo,  width=120)
+#logo = Image.open(r'...\Insights_Bees_logo.png')
+#st.sidebar.image(logo,  width=120)
 
 #Add the expander to provide some information about the app
 with st.sidebar.expander("About the App"):
@@ -40,8 +40,8 @@ st.markdown('<p class="font">Upload your project plan file and generate Gantt ch
 
 #Add a template screenshot as an example 
 st.subheader('Step 1: Download the project plan template')
-image = Image.open(r'...\example.png') #template screenshot provided as an example
-st.image(image,  caption='Make sure you use the same column names as in the template')
+#image = Image.open(r'...\example.png') #template screenshot provided as an example
+#st.image(image,  caption='Make sure you use the same column names as in the template')
 
 #Allow users to download the template
 @st.cache
