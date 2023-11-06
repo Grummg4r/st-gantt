@@ -61,8 +61,8 @@ st.subheader('Step 2: Upload your project plan file')
 uploaded_file = st.file_uploader("Fill out the project plan template and upload your file here. After you upload the file, you can edit your project plan within the app.", type=['csv'])
 if uploaded_file is not None:
     Tasks=pd.read_csv(uploaded_file)
-    Tasks['Start'] = Tasks['Start'].astype('datetime64')
-    Tasks['Finish'] = Tasks['Finish'].astype('datetime64')
+    Tasks['Start'] = Tasks['Start'].astype('datetime64[ns]')
+    Tasks['Finish'] = Tasks['Finish'].astype('datetime64[ns]')
     
     grid_response = AgGrid(
         Tasks,
