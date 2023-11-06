@@ -47,36 +47,14 @@ st.subheader('Step 1: Download the project plan template')
 @st.cache
 def convert_df(df):
      return df.to_csv().encode('utf-8')
-df=pd.read_csv(r'...\template.csv')
-csv = convert_df(df)
-st.download_button(
-     label="Download Template",
-     data=csv,
-     file_name='project_template.csv',
-     mime='text/csv',
- )
-
-#Add a file uploader to allow users to upload their project plan file
-st.subheader('Step 2: Upload your project plan file')
-
-uploaded_file = st.file_uploader("Fill out the project plan template and upload your file here. After you upload the file, you can edit your project plan within the app.", type=['csv'])
-if uploaded_file is not None:
-    Tasks=pd.read_csv(uploaded_file)
-    Tasks['Start'] = Tasks['Start'].astype('datetime64')
-    Tasks['Finish'] = Tasks['Finish'].astype('datetime64')
-    
-    grid_response = AgGrid(
-        Tasks,
-        editable=True, 
-        height=300, 
-        width='100%',
-        )
-
-    updated = grid_response['data']
-    df = pd.DataFrame(updated) 
-    
-else:
-    st.warning('You need to upload a csv file.') 
+#df=pd.read_csv(r'...\template.csv')
+#csv = convert_df(df)
+#st.download_button(
+#     label="Download Template",
+#     data=csv,
+#     file_name='project_template.csv',
+#     mime='text/csv',
+# )
 
 #Main interface section 2
 st.subheader('Step 2: Upload your project plan file')
